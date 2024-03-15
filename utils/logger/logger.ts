@@ -13,12 +13,12 @@ var streams = [
 ]
 
 const transport: LoggerOptions['transport'] = {
-  target: 'pino-pretty',
-  options: {
-    colorize: true,
-    ignore: 'pid,hostname',
-    translateTime: true,
-  },
+  // target: 'pino-pretty',
+  // options: {
+  //   colorize: true,
+  //   ignore: 'pid,hostname',
+  //   translateTime: true,
+  // },
 }
 
 // we want everything on development, but on production we want to use the
