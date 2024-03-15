@@ -137,9 +137,9 @@ export default function HeaderMenu({ showMenu }: HeaderMenuProps) {
         <>
           <Group className={showMenu && classes.hiddenMobile}>
             <ColorSchemeToggle variant="subtle" />
-            <LinkButton uppercase variant="subtle" href="/login">
+            {/* <LinkButton uppercase variant="subtle" href="/login">
               Log In
-            </LinkButton>
+            </LinkButton> */}
           </Group>
         </>
 
@@ -160,13 +160,13 @@ export default function HeaderMenu({ showMenu }: HeaderMenuProps) {
             <Paper className={classes.dropdown} withBorder style={styles}>
               <Stack>
                 {showMenu && <MenuItems className={classes.link} />}
-                <LinkButton
+                {/* <LinkButton
                   variant="subtle"
                   className={classes.button}
                   href="/login"
                 >
                   Log in
-                </LinkButton>
+                </LinkButton> */}
               </Stack>
             </Paper>
           )}
