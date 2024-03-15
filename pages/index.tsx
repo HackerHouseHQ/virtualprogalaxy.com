@@ -15,7 +15,7 @@ import type { ContactFormData } from '@/components/ContactForm'
 
 async function handleContactSubmit(values: ContactFormData) {
   const r = await axios.post('/api/contacts', values)
-  return r.statusText === 'OK'
+  return r.statusText === 'OK' || r.status === 200
 }
 
 
