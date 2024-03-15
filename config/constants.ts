@@ -1,9 +1,11 @@
 const DEV = process.env.NODE_ENV !== 'production'
 
 // temporary deployment url for this project
-const serverURL = 'http://hhhq.io/'
+// const serverURL = 'http://hhhq.io/'
+const serverURL = 'http://virtualprogalaxy.com/'
 // web-landing deployment url on vercel
-const clientVercel = 'https://hhhq-web-landing.vercel.app'
+// const clientVercel = 'https://hhhq-web-landing.vercel.app'
+const clientVercel = 'https://virtualprogalaxy.vercel.app'
 
 export const localhost = (port = 3000) => `http://localhost:${port}` as const
 
