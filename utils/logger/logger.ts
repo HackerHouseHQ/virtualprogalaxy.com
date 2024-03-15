@@ -7,20 +7,20 @@ import pinoPretty from 'pino-pretty'
  * @docs
  * https://getpino.io/#/docs/help?id=log-to-different-streams
  */
-const streams = [
-  { level: 'debug', stream: process.stdout },
-  { level: 'error', stream: process.stderr },
-  { level: 'fatal', stream: process.stderr },
-]
+// const streams = [
+//   { level: 'debug', stream: process.stdout },
+//   { level: 'error', stream: process.stderr },
+//   { level: 'fatal', stream: process.stderr },
+// ]
 
-const transport: LoggerOptions['transport'] = {
-  target: 'pino-pretty',
-  options: {
-    colorize: true,
-    ignore: 'pid,hostname',
-    translateTime: true,
-  },
-}
+// const transport: LoggerOptions['transport'] = {
+//   target: 'pino-pretty',
+//   options: {
+//     colorize: true,
+//     ignore: 'pid,hostname',
+//     translateTime: true,
+//   },
+// }
 
 // we want everything on development, but on production we want to use the
 // environment variable PINO_LOG_LEVEL or default to 'notice' so we suppress most
@@ -55,5 +55,5 @@ export const logger: Logger = pino({
    * @docs https://getpino.io/#/docs/pretty?id=api-example
    */
   // prettifier: require('pino-pretty'),
-  transport: transport,
+  // transport: transport,
 })
