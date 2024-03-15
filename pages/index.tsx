@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import axios from 'axios'
-import { useAuthRedirect } from '@/hooks/use-auth-redirect'
 import { PublicLayout } from '@/layouts/PublicLayout'
 // import mailer from '@/lib/nodemailer'
 import {
@@ -21,17 +20,6 @@ async function handleContactSubmit(values: ContactFormData) {
 
 
 const Home: React.FC = () => {
-  // const loading = useAuthRedirect({
-  //   redirects: {
-  //     // @dev this should be active. just disabled to work with the landing page
-  //     // authenticated: '/dashboard',
-  //   },
-  // })
-
-  // if (loading) {
-  //   // TODO: Add loading component
-  //   return <></>
-  // }
 
   return (
     <>
