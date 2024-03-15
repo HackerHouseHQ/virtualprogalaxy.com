@@ -68,7 +68,7 @@ export const ContactForm: React.FC<VPGContactProps> = ({
         form.reset()
       } else throw new Error('Form submission error')
     } catch (error) {
-      notifyError()
+      notifyError(error)
     } finally {
       setSending(false)
     }
@@ -155,10 +155,10 @@ function notifySuccess() {
   })
 }
 
-function notifyError() {
+function notifyError(error: any) {
   showNotification({
     title: 'Message not sent',
-    message: 'Something went wrong, please try again later',
+    message: 'Something went wrong, please try again later ' + JSON.stringify(error),
     color: 'red',
     icon: <IconSend size={16} stroke={1.5} />,
   })

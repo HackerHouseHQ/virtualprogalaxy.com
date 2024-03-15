@@ -14,9 +14,7 @@ import type { ContactFormData } from '@/components/ContactForm'
 // import logger from '@/utils/logger'
 
 async function handleContactSubmit(values: ContactFormData) {
-  console.info('submitting contact form', values)
   const r = await axios.post('/api/contacts', values)
-  console.info('result', r)
   return r.statusText === 'OK'
 }
 
