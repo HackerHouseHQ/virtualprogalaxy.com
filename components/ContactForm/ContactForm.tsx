@@ -133,7 +133,7 @@ export const ContactForm: React.FC<VPGContactProps> = ({
           uppercase
           variant="subtle"
           size="lg"
-          // fullWidth
+          fullWidth
           loading={sending}
           disabled={sending || !form.isValid()}
           loaderPosition="center"
