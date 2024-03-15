@@ -12,7 +12,7 @@ import {
 import Link from 'next/link'
 // import Image from 'next/image'
 import { useDisclosure } from '@mantine/hooks'
-import { LinkButton } from '../../components/Button'
+import { LinkButton } from '@/components/Button'
 import { ColorSchemeToggle } from '@/components/ColorSchemeToggle'
 import { VpgLogo } from '@/components/VpgLogo'
 
