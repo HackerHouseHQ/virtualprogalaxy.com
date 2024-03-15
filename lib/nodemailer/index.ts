@@ -1,8 +1,8 @@
-import logger from '@/utils/logger'
+// import logger from '@/utils/logger'
 import nodemailer from 'nodemailer'
 
 const transporter = () => {
-  logger.debug('creating mail transporter')
+  // logger.debug('creating mail transporter')
   return nodemailer.createTransport({
     host: process.env.CONTACT_MAIL_HOST,
     port: +(process.env.CONTACT_MAIL_PORT || 587),

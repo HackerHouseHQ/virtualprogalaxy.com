@@ -3,7 +3,7 @@ import { schema as formSchema } from './contacts-schema'
 import { corsMiddleware, cors } from '.'
 import { z } from 'zod'
 import mailer from '@/lib/nodemailer'
-import logger from '@/utils/logger'
+// import logger from '@/utils/logger'
 
 const handler: NextApiHandler = async (req, res) => {
   await corsMiddleware(req, res, cors)
@@ -33,7 +33,7 @@ const handler: NextApiHandler = async (req, res) => {
     })
     res.status(200).json({ name: 'Contact Form sent', success: true })
   } catch (error) {
-    logger.error(error)
+    // logger.error(error)
     res.status(500).json({ error: 'Internal Server Error', success: false })
   }
 }

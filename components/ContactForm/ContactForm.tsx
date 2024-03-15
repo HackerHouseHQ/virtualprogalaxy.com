@@ -12,7 +12,7 @@ import {
 import { IconSend } from '@tabler/icons'
 import { showNotification } from '@mantine/notifications'
 import { useForm, zodResolver } from '@mantine/form'
-import logger from '@/utils/logger'
+// import logger from '@/utils/logger'
 
 const contactReasons = [
   'Inquiries',
@@ -57,7 +57,7 @@ export const ContactForm: React.FC<VPGContactProps> = ({
   const handleSubmit = async (values: ContactFormValues) => {
     if (sending) return
     if (!onSubmit) {
-      logger.warn('no submit function was passed to the contact form')
+      // logger.warn('no submit function was passed to the contact form')
       throw new Error('Form submission not implemented')
     }
     setSending(true)

@@ -2,7 +2,8 @@ import { useConfigData, useFormValue, useThemeConfig } from '../../lib/landing-p
 import { SchemaViewer } from './SchemaViewer'
 import { ParseObject } from '../../lib/landing-pages/parse-object'
 import { useEffect } from 'react'
-import logger from '@/utils/logger'
+// import logger from '@/utils/logger'
+
 export function ThemeForm() {
   const [config, initial] = useThemeConfig()
   const formValue = useFormValue()
