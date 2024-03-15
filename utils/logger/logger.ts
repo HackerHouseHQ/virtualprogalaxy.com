@@ -7,11 +7,11 @@ import pinoPretty from 'pino-pretty'
  * @docs
  * https://getpino.io/#/docs/help?id=log-to-different-streams
  */
-// var streams = [
-//   { level: 'debug', stream: process.stdout },
-//   { level: 'error', stream: process.stderr },
-//   { level: 'fatal', stream: process.stderr },
-// ]
+const streams = [
+  { level: 'debug', stream: process.stdout },
+  { level: 'error', stream: process.stderr },
+  { level: 'fatal', stream: process.stderr },
+]
 
 const transport: LoggerOptions['transport'] = {
   target: 'pino-pretty',
