@@ -5,7 +5,7 @@ const Session = require('../../../api-lib/models/session')
 import { fetcher } from '../../../lib/fetcher'
 import { getToken } from 'next-auth/jwt'
 import { unstable_getServerSession } from 'next-auth/next'
-import { authOptions } from '../auth/[...nextauth]'
+import { authOptions } from '../_auth/[...nextauth]'
 // ./api/session/getControlSession
 // Get Sessions created by me
 
