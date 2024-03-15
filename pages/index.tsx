@@ -21,17 +21,17 @@ async function handleContactSubmit(values: ContactFormData) {
 
 
 const Home: React.FC = () => {
-  const loading = useAuthRedirect({
-    redirects: {
-      // @dev this should be active. just disabled to work with the landing page
-      // authenticated: '/dashboard',
-    },
-  })
+  // const loading = useAuthRedirect({
+  //   redirects: {
+  //     // @dev this should be active. just disabled to work with the landing page
+  //     // authenticated: '/dashboard',
+  //   },
+  // })
 
-  if (loading) {
-    // TODO: Add loading component
-    return <></>
-  }
+  // if (loading) {
+  //   // TODO: Add loading component
+  //   return <></>
+  // }
 
   return (
     <>

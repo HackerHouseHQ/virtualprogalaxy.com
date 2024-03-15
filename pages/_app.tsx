@@ -17,15 +17,15 @@ type AppProps = NextAppProps<{
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
 
   return (
-    <ReduxProvider {...pageProps}>
-    <SessionProvider session={session} refetchInterval={5 * 60}>
-      <RecoilRoot>
-        <SocketContextProvider>
+    // <ReduxProvider {...pageProps}>
+    // <SessionProvider session={session} refetchInterval={5 * 60}>
+      // <RecoilRoot>
+        // <SocketContextProvider>
           <AppWithContexts Component={Component} pageProps={{ ...pageProps }} />
-        </SocketContextProvider>
-      </RecoilRoot>
-      </SessionProvider>
-      </ReduxProvider>
+        // </SocketContextProvider>
+      // </RecoilRoot>
+      // </SessionProvider>
+      // </ReduxProvider>
   )
 }
 // export default wrapper.withRedux(MyApp)
