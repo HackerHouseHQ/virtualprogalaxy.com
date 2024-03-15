@@ -12,7 +12,7 @@ import {
 import { IconSend } from '@tabler/icons'
 import { showNotification } from '@mantine/notifications'
 import { useForm, zodResolver } from '@mantine/form'
-import logger from '@/utils/logger'
+// import logger from '@/utils/logger'
 
 const contactReasons = [
   'Inquiries',
@@ -57,7 +57,7 @@ export const ContactForm: React.FC<VPGContactProps> = ({
   const handleSubmit = async (values: ContactFormValues) => {
     if (sending) return
     if (!onSubmit) {
-      logger.warn('no submit function was passed to the contact form')
+      // logger.warn('no submit function was passed to the contact form')
       throw new Error('Form submission not implemented')
     }
     setSending(true)
@@ -68,7 +68,7 @@ export const ContactForm: React.FC<VPGContactProps> = ({
         form.reset()
       } else throw new Error('Form submission error')
     } catch (error) {
-      notifyError()
+      notifyError(error)
     } finally {
       setSending(false)
     }
@@ -133,7 +133,7 @@ export const ContactForm: React.FC<VPGContactProps> = ({
           uppercase
           variant="subtle"
           size="lg"
-          // fullWidth
+          fullWidth
           loading={sending}
           disabled={sending || !form.isValid()}
           loaderPosition="center"
@@ -155,10 +155,10 @@ function notifySuccess() {
   })
 }
 
-function notifyError() {
+function notifyError(error: any) {
   showNotification({
     title: 'Message not sent',
-    message: 'Something went wrong, please try again later',
+    message: 'Something went wrong, please try again later ' + JSON.stringify(error),
     color: 'red',
     icon: <IconSend size={16} stroke={1.5} />,
   })

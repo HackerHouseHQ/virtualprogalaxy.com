@@ -1,7 +1,7 @@
 import mailer from '@/lib/nodemailer'
 import { NextApiResponse, NextApiRequest, NextApiHandler } from 'next'
 import { schema as formSchema } from '@/components/ContactForm'
-import logger from '@/utils/logger'
+// import logger from '@/utils/logger'
 import Cors from 'cors'
 import { z } from 'zod'
 
@@ -59,7 +59,7 @@ const handler: NextApiHandler = async (req, res) => {
     })
     res.status(200).json({ name: 'Contact Form sent', success: true })
   } catch (error) {
-    logger.error(error)
+    // logger.error(error)
     res.status(500).json({ error: 'Internal Server Error', success: false })
   }
 }

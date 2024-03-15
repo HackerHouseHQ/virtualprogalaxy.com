@@ -1,12 +1,7 @@
 import { Session } from 'next-auth'
 import { Router } from 'next/router'
-import { Provider } from "react-redux";
-import { SessionProvider } from 'next-auth/react'
 import type { AppProps as NextAppProps } from 'next/app'
 
-import { SocketContextProvider } from '../contexts/socket'
-import { RecoilRoot } from 'recoil'
-import { wrapper } from '@/store/store'
 import AppWithContexts from './_app.internal'
 
 type AppProps = NextAppProps<{
@@ -14,24 +9,9 @@ type AppProps = NextAppProps<{
   router?: Router
 }>
 
-function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
+export default function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
 
   return (
-    // <ReduxProvider {...pageProps}>
-    // <SessionProvider session={session} refetchInterval={5 * 60}>
-      // <RecoilRoot>
-        // <SocketContextProvider>
-          <AppWithContexts Component={Component} pageProps={{ ...pageProps }} />
-        // </SocketContextProvider>
-      // </RecoilRoot>
-      // </SessionProvider>
-      // </ReduxProvider>
+    <AppWithContexts Component={Component} pageProps={{ ...pageProps }} />
   )
-}
-// export default wrapper.withRedux(MyApp)
-export default MyApp
-
-function ReduxProvider(rest: any) {
-  const { store, props } = wrapper.useWrappedStore(rest)
-  return <Provider store={store}>{props.children}</Provider>
 }

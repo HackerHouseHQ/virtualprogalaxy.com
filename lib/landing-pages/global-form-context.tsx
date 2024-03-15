@@ -3,7 +3,8 @@ import { createContext, PropsWithChildren, useContext, useState } from 'react'
 import { parseGlobalConfig } from './parse-global-config'
 import { parseSchema } from './parse-schema'
 import { useConfig } from './use-config'
-import logger from '@/utils/logger'
+// import logger from '@/utils/logger'
+
 interface GlobalContextValue {
   global: ReturnType<typeof useConfig>
   formValue: UseFormReturnType<FormValues>
