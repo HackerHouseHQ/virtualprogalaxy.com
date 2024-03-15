@@ -1,4 +1,5 @@
 import pino, { Logger, LoggerOptions } from 'pino'
+import pinoPretty from 'pino-pretty'
 
 /**
  * @WIP - multistream to get warn|error and higher to file for actual debugging
@@ -6,19 +7,19 @@ import pino, { Logger, LoggerOptions } from 'pino'
  * @docs
  * https://getpino.io/#/docs/help?id=log-to-different-streams
  */
-var streams = [
-  { level: 'debug', stream: process.stdout },
-  { level: 'error', stream: process.stderr },
-  { level: 'fatal', stream: process.stderr },
-]
+// var streams = [
+//   { level: 'debug', stream: process.stdout },
+//   { level: 'error', stream: process.stderr },
+//   { level: 'fatal', stream: process.stderr },
+// ]
 
 const transport: LoggerOptions['transport'] = {
-  // target: 'pino-pretty',
-  // options: {
-  //   colorize: true,
-  //   ignore: 'pid,hostname',
-  //   translateTime: true,
-  // },
+  target: 'pino-pretty',
+  options: {
+    colorize: true,
+    ignore: 'pid,hostname',
+    translateTime: true,
+  },
 }
 
 // we want everything on development, but on production we want to use the
