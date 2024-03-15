@@ -1,5 +1,5 @@
 import { NextApiHandler } from 'next'
-import { schema as formSchema } from '@/components/EarlyAccessForm'
+import { schema as formSchema } from './contacts-schema'
 import { corsMiddleware, cors } from '.'
 import { z } from 'zod'
 import mailer from '@/lib/nodemailer'
